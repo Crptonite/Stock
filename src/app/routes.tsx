@@ -7,6 +7,7 @@ import { Dashboard } from "./pages/Dashboard";
 import { AIAnalysis } from "./pages/AIAnalysis";
 import { Settings } from "./pages/Settings";
 import { AuthPage } from "./pages/AuthPage";
+import { AuthCallback } from "./pages/AuthCallback";
 import { ProTools } from "./pages/ProTools";
 import { WealthAutomation } from "./pages/WealthAutomation";
 import { AlternativeAssets } from "./pages/AlternativeAssets";
@@ -25,6 +26,11 @@ export const router = createBrowserRouter([
   {
     path: "/login",
     Component: AuthPage,
+  },
+  {
+    // OAuth callback — must be public, no auth guard
+    path: "/auth/callback",
+    Component: AuthCallback,
   },
   {
     // Protected shell — all app routes require auth
